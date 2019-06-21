@@ -1,4 +1,5 @@
 const express = require('express');
+// eslint-disable-next-line new-cap
 const profileRoutes = express.Router();
 
 // Require Post model in our routes module
@@ -13,8 +14,11 @@ profileRoutes.route('/').get(function(req, res) {
     } else {
       res.json(profiles);
     }
+    return res.json(profiles);
   });
 });
+
+/* CRUD */
 
 // create
 profileRoutes.route('/create').post(function(req, res) {
